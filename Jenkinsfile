@@ -1,26 +1,25 @@
 pipeline {
     agent any 
-    
     stages{
         stage("Clone Code"){
             steps {
                 echo "Cloning the code"
-                git url:"", branch: "main"
+                git url:"https://github.com/zainwaseem/clinicspy.git", branch: "main"
             }
         }
         stage("Build"){
             steps {
                 echo "Building the image"
-                sh "docker build -t my-note-app ."
+                sh "docker build -t clinicspy ."
             }
         }
         stage("Push to Docker Hub"){
             steps {
                 echo "Pushing the image to docker hub via EC2"
                 withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
-                sh "docker tag my-note-app ${env.dockerHubUser}/my-note-app:latest"
+                sh "docker tag clinicspy ${env.dockerHubUser}/clinicspy:latest"
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                sh "docker push ${env.dockerHubUser}/my-note-app:latest"
+                sh "docker push ${env.dockerHubUser}/clinicspy:latest"
                 }
             }
         }
@@ -28,7 +27,6 @@ pipeline {
             steps {
                 echo "Deploying the container"
                 sh "docker-compose down && docker-compose up -d"
-                
             }
         }
     }

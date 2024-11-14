@@ -3,7 +3,7 @@ version: "3.8"
 services:
   frontend:
     build:
-      context: ./clinicspy-ui-main # Path to frontend folder
+      context: ./clinicspy-ui # Path to frontend folder
       dockerfile: Dockerfile # Dockerfile in the frontend folder
     ports:
       - "3000:3000"
@@ -14,7 +14,7 @@ services:
 
   backend:
     build:
-      context: ./clinicspy-server-main # Path to backend folder
+      context: ./clinicspy-server # Path to backend folder
       dockerfile: Dockerfile # Dockerfile in the backend folder
     ports:
       - "5000:5000"
