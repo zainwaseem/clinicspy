@@ -1,0 +1,191 @@
+[
+  {
+    "Authority_Score": "Authority Score",
+    "Authority_Value": "8",
+    "Semrush_Domain_Rank_Title": "Semrush Domain Rank",
+    "Semrush_Domain_Rank_Value": "3.7M",
+    "Organic_search_traffic": "Organic Search Traffic",
+    "Organic_search_traffic_Value": "206 +79%",
+    "Paid_Search_traffic": "Paid Search Traffic",
+    "Paid_Search_traffic_Value": "206",
+    "BackLinks": "Backlinks",
+    "BackLinks_Value": "16",
+    "Referring_Domains": "14",
+    "Organic_Traffic": "206/month",
+    "Organic_Keywords": "84",
+    "follow_links": "5",
+    "nofollow_links": "12"
+  },
+  {
+    "Title": "Distribution by Country",
+    "Data": [
+      {
+        "Countries": "Worldwide",
+        "Traffic Share": "100%",
+        "Traffic": "206",
+        "Keywords": "84"
+      },
+      {
+        "Countries": "US",
+        "Traffic Share": "45%",
+        "Traffic": "93",
+        "Keywords": "60"
+      },
+      {
+        "Countries": "MT",
+        "Traffic Share": "22%",
+        "Traffic": "45",
+        "Keywords": "2"
+      },
+      {
+        "Countries": "VN",
+        "Traffic Share": "20%",
+        "Traffic": "42",
+        "Keywords": "2"
+      },
+      {
+        "Countries": "Other",
+        "Traffic Share": "13%",
+        "Traffic": "26",
+        "Keywords": "20"
+      }
+    ]
+  },
+  {
+    "Title": "Top Organic Keywords",
+    "Total_Organic_Keywords": "58",
+    "Data": [
+      {
+        "Keyword": "mind clinic",
+        "Intent": "C\nN",
+        "Pos.": "2",
+        "Volume": "2.4K",
+        "CPU(USD)": "",
+        "Trafic %": ""
+      },
+      {
+        "Keyword": "mindclinic",
+        "Intent": "C",
+        "Pos.": "2",
+        "Volume": "90",
+        "CPU(USD)": "",
+        "Trafic %": ""
+      },
+      {
+        "Keyword": "mind clinic ketamine",
+        "Intent": "I\nT",
+        "Pos.": "1",
+        "Volume": "40",
+        "CPU(USD)": "",
+        "Trafic %": ""
+      },
+      {
+        "Keyword": "mind clinic ketamine",
+        "Intent": "I\nT",
+        "Pos.": "2",
+        "Volume": "40",
+        "CPU(USD)": "",
+        "Trafic %": ""
+      },
+      {
+        "Keyword": "the mind clinic",
+        "Intent": "I",
+        "Pos.": "8",
+        "Volume": "170",
+        "CPU(USD)": "",
+        "Trafic %": ""
+      }
+    ]
+  },
+  {
+    "Title": "Keywords by Intent",
+    "Data": [
+      {
+        "Intent": "Informational\n46.4%",
+        "Keywords": "39",
+        "Traffic": "20"
+      },
+      {
+        "Intent": "Navigational\n15.5%",
+        "Keywords": "13",
+        "Traffic": "62"
+      },
+      {
+        "Intent": "Commercial\n28.6%",
+        "Keywords": "24",
+        "Traffic": "73"
+      },
+      {
+        "Intent": "Transactional\n9.5%",
+        "Keywords": "8",
+        "Traffic": "16"
+      }
+    ]
+  },
+  {
+    "Title": "Main Organic Keywords",
+    "Total_Main_Organic_Keywords": "60",
+    "Data": [
+      {
+        "Competitor": "themindclinic.us",
+        "Com. Level": "53",
+        "Com. Keywords": "4",
+        "SE Keywords": "9"
+      },
+      {
+        "Competitor": "mymindclinic.com",
+        "Com. Level": "45",
+        "Com. Keywords": "4",
+        "SE Keywords": "96"
+      },
+      {
+        "Competitor": "themindclinic.org",
+        "Com. Level": "32",
+        "Com. Keywords": "2",
+        "SE Keywords": "15"
+      },
+      {
+        "Competitor": "nuemindclinic.com",
+        "Com. Level": "24",
+        "Com. Keywords": "1",
+        "SE Keywords": "103"
+      },
+      {
+        "Competitor": "reveriemind.com",
+        "Com. Level": "20",
+        "Com. Keywords": "2",
+        "SE Keywords": "38"
+      },
+      {
+        "Competitor": "themindclinic.us",
+        "Com. Level": "53",
+        "Com. Keywords": "4",
+        "SE Keywords": "9"
+      },
+      {
+        "Competitor": "mymindclinic.com",
+        "Com. Level": "45",
+        "Com. Keywords": "4",
+        "SE Keywords": "96"
+      },
+      {
+        "Competitor": "themindclinic.org",
+        "Com. Level": "32",
+        "Com. Keywords": "2",
+        "SE Keywords": "15"
+      },
+      {
+        "Competitor": "nuemindclinic.com",
+        "Com. Level": "24",
+        "Com. Keywords": "1",
+        "SE Keywords": "103"
+      },
+      {
+        "Competitor": "reveriemind.com",
+        "Com. Level": "20",
+        "Com. Keywords": "2",
+        "SE Keywords": "38"
+      }
+    ]
+  }
+]

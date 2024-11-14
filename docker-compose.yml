@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: ./clinicspy-ui-main # Path to frontend folder
+      dockerfile: Dockerfile # Dockerfile in the frontend folder
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    environment:
+      - NODE_ENV=production
+
+  backend:
+    build:
+      context: ./clinicspy-server-main # Path to backend folder
+      dockerfile: Dockerfile # Dockerfile in the backend folder
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+    environment:
+      - NODE_ENV=production
+
+networks:
+  app-network:
+    driver: bridge

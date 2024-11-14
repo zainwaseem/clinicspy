@@ -1,0 +1,61 @@
+app.post("/api/search", async (req, res) => {
+  const {
+    q,
+    domain,
+    lang,
+    device,
+    serp_type,
+    loc,
+    loc_id,
+    verbatim,
+    gfilter,
+    page,
+    num_result,
+  } = req.body;
+
+  // Check if the required parameters are provided
+  if (!q || !domain || !lang || !device || !serp_type) {
+    return res.status(400).json({ error: "Missing required parameters" });
+  }
+
+  // Configure the request to the Serphouse API
+  const config = {
+    method: "post",
+    url: "https://api.serphouse.com/serp/live",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization:
+        "Bearer bhkOWgLJ95JdvmEmVj0ALyMPZ7ztdLQckofSrU4QWtEYftvxr6rHTfM7jt3Y", // Replace with your actual API key
+    },
+    data: JSON.stringify({
+      data: {
+        q,
+        domain,
+        lang,
+        device,
+        serp_type,
+        loc,
+        loc_id,
+        verbatim,
+        gfilter,
+        page,
+        num_result,
+      },
+    }),
+  };
+
+  try {
+    // Make the request to Serphouse API
+    const response = await axios(config);
+    // Send the data from the API response
+    res.json(response.data);
+  } catch (error) {
+    // Handle any errors
+    console.error(error);
+    const status = error.response ? error.response.status : 500;
+    const message = error.response
+      ? error.response.data
+      : "An error occurred while fetching search results";
+    res.status(status).json({ error: message });
+  }
+});
