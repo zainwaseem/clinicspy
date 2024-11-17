@@ -1,31 +1,35 @@
 pipeline {
     agent any 
-    stages{
-        stage("Clone Code"){
+    stages {
+        stage("Clone Code") {
             steps {
                 echo "Cloning the code"
-                git url:"https://github.com/zainwaseem/clinicspy.git", branch: "main"
+                git url: "https://github.com/zainwaseem/clinicspy.git", branch: "main"
             }
         }
-        stage("Build"){
+        stage("Build with Docker Compose") {
             steps {
-                echo "Building the image"
-                sh "docker build -t clinicspy ."
+                echo "Building the images using Docker Compose"
+                sh "docker-compose build"
             }
         }
-        stage("Push to Docker Hub"){
+        stage("Push to Docker Hub") {
             steps {
-                echo "Pushing the image to docker hub via EC2"
-                withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
-                sh "docker tag clinicspy ${env.dockerHubUser}/clinicspy:latest"
-                sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                sh "docker push ${env.dockerHubUser}/clinicspy:latest"
+                echo "Pushing the images to Docker Hub"
+                withCredentials([usernamePassword(credentialsId: "dockerHub", passwordVariable: "dockerHubPass", usernameVariable: "dockerHubUser")]) {
+                    sh """
+                    docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}
+                    docker tag clinicspy-frontend ${env.dockerHubUser}/clinicspy-frontend:latest
+                    docker push ${env.dockerHubUser}/clinicspy-frontend:latest
+                    docker tag clinicspy-backend ${env.dockerHubUser}/clinicspy-backend:latest
+                    docker push ${env.dockerHubUser}/clinicspy-backend:latest
+                    """
                 }
             }
         }
-        stage("Deploy"){
+        stage("Deploy") {
             steps {
-                echo "Deploying the container"
+                echo "Deploying the containers using Docker Compose"
                 sh "docker-compose down && docker-compose up -d"
             }
         }
